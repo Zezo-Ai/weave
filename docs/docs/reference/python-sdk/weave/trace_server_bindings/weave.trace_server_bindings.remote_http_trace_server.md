@@ -56,12 +56,12 @@ __init__(
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L274"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L278"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `call_end`
 
 ```python
-call_end(req: Union[CallEndReq, Dict[str, Any]]) → CallEndRes
+call_end(req: Union[CallEndReq, dict[str, Any]]) → CallEndRes
 ```
 
 
@@ -70,12 +70,12 @@ call_end(req: Union[CallEndReq, Dict[str, Any]]) → CallEndRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L287"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L289"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `call_read`
 
 ```python
-call_read(req: Union[CallReadReq, Dict[str, Any]]) → CallReadRes
+call_read(req: Union[CallReadReq, dict[str, Any]]) → CallReadRes
 ```
 
 
@@ -84,12 +84,12 @@ call_read(req: Union[CallReadReq, Dict[str, Any]]) → CallReadRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L253"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L257"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `call_start`
 
 ```python
-call_start(req: Union[CallStartReq, Dict[str, Any]]) → CallStartRes
+call_start(req: Union[CallStartReq, dict[str, Any]]) → CallStartRes
 ```
 
 
@@ -103,7 +103,7 @@ call_start(req: Union[CallStartReq, Dict[str, Any]]) → CallStartRes
 ### <kbd>method</kbd> `call_update`
 
 ```python
-call_update(req: Union[CallUpdateReq, Dict[str, Any]]) → CallUpdateRes
+call_update(req: Union[CallUpdateReq, dict[str, Any]]) → CallUpdateRes
 ```
 
 
@@ -117,7 +117,7 @@ call_update(req: Union[CallUpdateReq, Dict[str, Any]]) → CallUpdateRes
 ### <kbd>method</kbd> `calls_delete`
 
 ```python
-calls_delete(req: Union[CallsDeleteReq, Dict[str, Any]]) → CallsDeleteRes
+calls_delete(req: Union[CallsDeleteReq, dict[str, Any]]) → CallsDeleteRes
 ```
 
 
@@ -131,7 +131,7 @@ calls_delete(req: Union[CallsDeleteReq, Dict[str, Any]]) → CallsDeleteRes
 ### <kbd>method</kbd> `calls_query`
 
 ```python
-calls_query(req: Union[CallsQueryReq, Dict[str, Any]]) → CallsQueryRes
+calls_query(req: Union[CallsQueryReq, dict[str, Any]]) → CallsQueryRes
 ```
 
 
@@ -146,7 +146,7 @@ calls_query(req: Union[CallsQueryReq, Dict[str, Any]]) → CallsQueryRes
 
 ```python
 calls_query_stats(
-    req: Union[CallsQueryStatsReq, Dict[str, Any]]
+    req: Union[CallsQueryStatsReq, dict[str, Any]]
 ) → CallsQueryStatsRes
 ```
 
@@ -170,6 +170,48 @@ calls_query_stream(req: CallsQueryReq) → Iterator[CallSchema]
 
 ---
 
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L528"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `cost_create`
+
+```python
+cost_create(req: Union[CostCreateReq, dict[str, Any]]) → CostCreateRes
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L535"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `cost_purge`
+
+```python
+cost_purge(req: Union[CostPurgeReq, dict[str, Any]]) → CostPurgeRes
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L521"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `cost_query`
+
+```python
+cost_query(req: Union[CostQueryReq, dict[str, Any]]) → CostQueryRes
+```
+
+
+
+
+
+---
+
 <a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L110"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `ensure_project_exists`
@@ -184,13 +226,13 @@ ensure_project_exists(entity: str, project: str) → EnsureProjectExistsRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L491"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L499"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `feedback_create`
 
 ```python
 feedback_create(
-    req: Union[FeedbackCreateReq, Dict[str, Any]]
+    req: Union[FeedbackCreateReq, dict[str, Any]]
 ) → FeedbackCreateRes
 ```
 
@@ -200,12 +242,12 @@ feedback_create(
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L505"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L513"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `feedback_purge`
 
 ```python
-feedback_purge(req: Union[FeedbackPurgeReq, Dict[str, Any]]) → FeedbackPurgeRes
+feedback_purge(req: Union[FeedbackPurgeReq, dict[str, Any]]) → FeedbackPurgeRes
 ```
 
 
@@ -214,12 +256,12 @@ feedback_purge(req: Union[FeedbackPurgeReq, Dict[str, Any]]) → FeedbackPurgeRe
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L498"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L506"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `feedback_query`
 
 ```python
-feedback_query(req: Union[FeedbackQueryReq, Dict[str, Any]]) → FeedbackQueryRes
+feedback_query(req: Union[FeedbackQueryReq, dict[str, Any]]) → FeedbackQueryRes
 ```
 
 
@@ -228,7 +270,7 @@ feedback_query(req: Union[FeedbackQueryReq, Dict[str, Any]]) → FeedbackQueryRe
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/file_content_read#L468"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/file_content_read#L476"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `file_content_read`
 
@@ -242,7 +284,7 @@ file_content_read(req: FileContentReadReq) → FileContentReadRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/file_create#L448"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/file_create#L456"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `file_create`
 
@@ -270,12 +312,12 @@ from_env(should_batch: bool = False) → RemoteHTTPTraceServer
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L346"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L342"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `obj_create`
 
 ```python
-obj_create(req: Union[ObjCreateReq, Dict[str, Any]]) → ObjCreateRes
+obj_create(req: Union[ObjCreateReq, dict[str, Any]]) → ObjCreateRes
 ```
 
 
@@ -284,12 +326,12 @@ obj_create(req: Union[ObjCreateReq, Dict[str, Any]]) → ObjCreateRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L353"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L349"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `obj_read`
 
 ```python
-obj_read(req: Union[ObjReadReq, Dict[str, Any]]) → ObjReadRes
+obj_read(req: Union[ObjReadReq, dict[str, Any]]) → ObjReadRes
 ```
 
 
@@ -298,12 +340,12 @@ obj_read(req: Union[ObjReadReq, Dict[str, Any]]) → ObjReadRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L358"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L352"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `objs_query`
 
 ```python
-objs_query(req: Union[ObjQueryReq, Dict[str, Any]]) → ObjQueryRes
+objs_query(req: Union[ObjQueryReq, dict[str, Any]]) → ObjQueryRes
 ```
 
 
@@ -317,7 +359,7 @@ objs_query(req: Union[ObjQueryReq, Dict[str, Any]]) → ObjQueryRes
 ### <kbd>method</kbd> `op_create`
 
 ```python
-op_create(req: Union[OpCreateReq, Dict[str, Any]]) → OpCreateRes
+op_create(req: Union[OpCreateReq, dict[str, Any]]) → OpCreateRes
 ```
 
 
@@ -326,12 +368,12 @@ op_create(req: Union[OpCreateReq, Dict[str, Any]]) → OpCreateRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L336"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L334"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `op_read`
 
 ```python
-op_read(req: Union[OpReadReq, Dict[str, Any]]) → OpReadRes
+op_read(req: Union[OpReadReq, dict[str, Any]]) → OpReadRes
 ```
 
 
@@ -340,12 +382,12 @@ op_read(req: Union[OpReadReq, Dict[str, Any]]) → OpReadRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L339"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L337"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `ops_query`
 
 ```python
-ops_query(req: Union[OpQueryReq, Dict[str, Any]]) → OpQueryRes
+ops_query(req: Union[OpQueryReq, dict[str, Any]]) → OpQueryRes
 ```
 
 
@@ -354,12 +396,12 @@ ops_query(req: Union[OpQueryReq, Dict[str, Any]]) → OpQueryRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L441"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L449"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `refs_read_batch`
 
 ```python
-refs_read_batch(req: Union[RefsReadBatchReq, Dict[str, Any]]) → RefsReadBatchRes
+refs_read_batch(req: Union[RefsReadBatchReq, dict[str, Any]]) → RefsReadBatchRes
 ```
 
 
@@ -368,7 +410,7 @@ refs_read_batch(req: Union[RefsReadBatchReq, Dict[str, Any]]) → RefsReadBatchR
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/server_info#L237"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/docs/weave/trace_server_bindings/remote_http_trace_server/server_info#L241"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `server_info`
 
@@ -396,24 +438,24 @@ set_auth(auth: Tuple[str, str]) → None
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L365"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L359"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `table_create`
 
 ```python
-table_create(req: Union[TableCreateReq, Dict[str, Any]]) → TableCreateRes
+table_create(req: Union[TableCreateReq, dict[str, Any]]) → TableCreateRes
 ```
 
 Similar to `calls/batch_upsert`, we can dynamically adjust the payload size due to the property that table creation can be decomposed into a series of updates. This is useful when the table creation size is too big to be sent in a single request. We can create an empty table first, then update the table with the rows. 
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L434"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L435"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `table_query`
 
 ```python
-table_query(req: Union[TableQueryReq, Dict[str, Any]]) → TableQueryRes
+table_query(req: Union[TableQueryReq, dict[str, Any]]) → TableQueryRes
 ```
 
 
@@ -422,7 +464,23 @@ table_query(req: Union[TableQueryReq, Dict[str, Any]]) → TableQueryRes
 
 ---
 
-<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L404"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L442"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `table_query_stats`
+
+```python
+table_query_stats(
+    req: Union[TableQueryStatsReq, dict[str, Any]]
+) → TableQueryStatsRes
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/wandb/weave/blob/master/weave/trace_server_bindings/remote_http_trace_server.py#L400"><img align="right" src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
 
 ### <kbd>method</kbd> `table_update`
 
@@ -489,4 +547,4 @@ Similar to `calls/batch_upsert`, we can dynamically adjust the payload size due 
 
 **Pydantic Fields:**
 
-- `batch`: `typing.List[typing.Union[StartBatchItem, EndBatchItem]]`
+- `batch`: `list[typing.Union[StartBatchItem, EndBatchItem]]`

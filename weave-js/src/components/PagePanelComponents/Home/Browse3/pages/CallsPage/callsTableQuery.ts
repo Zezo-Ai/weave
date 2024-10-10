@@ -3,14 +3,17 @@ import {
   GridPaginationModel,
   GridSortModel,
 } from '@mui/x-data-grid-pro';
-import {useMemo} from 'react';
+import {useCallback, useMemo} from 'react';
 
 import {useDeepMemo} from '../../../../../../hookUtils';
 import {isValuelessOperator} from '../../filters/common';
 import {operationConverter} from '../common/tabularListViews/operators';
 import {useWFHooks} from '../wfReactInterface/context';
 import {Query} from '../wfReactInterface/traceServerClientInterface/query';
-import {CallFilter} from '../wfReactInterface/wfDataModelHooksInterface';
+import {
+  CallFilter,
+  CallSchema,
+} from '../wfReactInterface/wfDataModelHooksInterface';
 import {WFHighLevelCallFilter} from './callsTableFilter';
 
 /**
@@ -30,8 +33,14 @@ export const useCallsForQuery = (
   gridFilter: GridFilterModel,
   gridSort: GridSortModel,
   gridPage: GridPaginationModel,
-  expandedColumns: Set<string>
-) => {
+  expandedColumns: Set<string>,
+  columns?: string[]
+): {
+  result: CallSchema[];
+  loading: boolean;
+  total: number;
+  refetch: () => void;
+} => {
   const {useCalls, useCallsStats} = useWFHooks();
   const offset = gridPage.page * gridPage.pageSize;
   const limit = gridPage.pageSize;
@@ -49,7 +58,7 @@ export const useCallsForQuery = (
     offset,
     sortBy,
     filterBy,
-    undefined,
+    columns,
     expandedColumns,
     {
       refetchOnDelete: true,
@@ -72,13 +81,19 @@ export const useCallsForQuery = (
     }
   }, [callResults.length, callsStats.loading, callsStats.result, offset]);
 
+  const refetch = useCallback(() => {
+    calls.refetch();
+    callsStats.refetch();
+  }, [calls, callsStats]);
+
   return useMemo(() => {
     return {
       loading: calls.loading,
       result: calls.loading ? [] : callResults,
       total,
+      refetch,
     };
-  }, [callResults, calls.loading, total]);
+  }, [callResults, calls.loading, total, refetch]);
 };
 
 export const useFilterSortby = (

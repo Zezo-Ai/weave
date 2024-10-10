@@ -32,7 +32,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
   children?: ReactElement | string;
   active?: boolean;
-  tooltip?: string;
+  tooltip?: ReactElement | string;
   tooltipProps?: TooltipContentProps;
   twWrapperStyles?: React.CSSProperties;
 };
@@ -68,6 +68,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const isGhost = variant === 'ghost';
     const isQuiet = variant === 'quiet';
     const isDestructive = variant === 'destructive';
+    const isOutline = variant === 'outline';
 
     const hasBothIcons = startIcon && endIcon;
     const hasOnlyOneIcon = hasIcon && !hasBothIcons;
@@ -91,7 +92,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={twMerge(
           classNames(
             'night-aware',
-            "inline-flex items-center justify-center whitespace-nowrap rounded border-none font-['Source_Sans_Pro'] font-semibold",
+            "inline-flex items-center justify-center whitespace-nowrap rounded font-['Source_Sans_Pro'] font-semibold",
             'disabled:pointer-events-none disabled:opacity-35',
             'focus-visible:outline focus-visible:outline-[2px] focus-visible:outline-teal-500',
             {
@@ -131,6 +132,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               // destructive
               'bg-red-500 text-white hover:bg-red-450': isDestructive,
               'bg-red-450': isDestructive && active,
+
+              // outline
+              'box-border gap-4 border border-moon-200 bg-white text-moon-650 hover:border-transparent hover:bg-teal-300/[0.48] hover:text-teal-600':
+                isOutline,
+              'dark:border-moon-750 dark:bg-transparent dark:text-moon-200 dark:hover:bg-teal-700/[0.48] dark:hover:text-teal-400':
+                isOutline,
+              // the border was adding 2px even with className="box-border" so we manually set height
+              'h-24': isOutline && isSmall,
+              'h-32': isOutline && isMedium,
+              'h-40': isOutline && isLarge,
+
+              'border-none': !isOutline,
             },
             className
           )
@@ -150,10 +163,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <Tooltip.Root open={isTooltipOpen} onOpenChange={setIsTooltipOpen}>
               <Tooltip.Trigger asChild>
                 {/* span is needed so tooltip works on disabled buttons */}
-                <span>{button}</span>
+                <span className="[display:inherit]">{button}</span>
               </Tooltip.Trigger>
               <Tooltip.Portal>
-                <Tooltip.Content {...tooltipProps}>{tooltip}</Tooltip.Content>
+                <Tooltip.Content
+                  {...tooltipProps}
+                  style={{
+                    // it's hard to state how silly this is, but the zIndex on semantic's modal is 2147483605 - so, that + 1
+                    zIndex: 2147483606,
+                  }}>
+                  {tooltip}
+                </Tooltip.Content>
               </Tooltip.Portal>
             </Tooltip.Root>
           </Tooltip.Provider>

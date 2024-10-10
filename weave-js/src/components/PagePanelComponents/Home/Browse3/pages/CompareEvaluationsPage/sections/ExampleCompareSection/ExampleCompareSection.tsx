@@ -58,12 +58,14 @@ const PropKey = styled.div`
   text-align: right;
   scrollbar-width: none;
 `;
+PropKey.displayName = 'S.PropKey';
 
 const GridCell = styled.div<{
   colSpan?: number;
   rowSpan?: number;
   button?: boolean;
 }>`
+  font-size: 14px;
   border: 1px solid ${MOON_200};
   grid-column-end: span ${props => props.colSpan || 1};
   grid-row-end: span ${props => props.rowSpan || 1};
@@ -81,6 +83,7 @@ const GridCell = styled.div<{
     }
   `}
 `;
+GridCell.displayName = 'S.GridCell';
 
 const GridCellSubgrid = styled.div<{
   colSpan?: number;
@@ -97,6 +100,7 @@ const GridCellSubgrid = styled.div<{
   grid-template-columns: ${props => props.colsTemp || 'subgrid'};
   overflow: auto;
 `;
+GridCellSubgrid.displayName = 'S.GridCellSubgrid';
 
 const GridContainer = styled.div<{colsTemp: string; rowsTemp: string}>`
   display: grid;
@@ -104,6 +108,7 @@ const GridContainer = styled.div<{colsTemp: string; rowsTemp: string}>`
   grid-template-columns: ${props => props.colsTemp};
   grid-template-rows: ${props => props.rowsTemp};
 `;
+GridContainer.displayName = 'S.GridContainer';
 
 const centeredTextStyleMixin: React.CSSProperties = {
   display: 'flex',
@@ -224,8 +229,13 @@ export const ExampleCompareSection: React.FC<{
   const {ref1, ref2} = useLinkHorizontalScroll();
 
   const compositeScoreMetrics = useMemo(
-    () => buildCompositeMetricsMap(props.state.data, 'score'),
-    [props.state.data]
+    () =>
+      buildCompositeMetricsMap(
+        props.state.data,
+        'score',
+        props.state.selectedMetrics
+      ),
+    [props.state.data, props.state.selectedMetrics]
   );
 
   if (target == null) {
@@ -247,9 +257,13 @@ export const ExampleCompareSection: React.FC<{
       .length;
   });
   const numEvals = numTrials.length;
+  // Get derived scores, then filter out any not in the selected metrics
   const derivedScores = Object.values(
     getMetricIds(props.state.data, 'score', 'derived')
+  ).filter(
+    score => props.state.selectedMetrics?.[flattenedDimensionPath(score)]
   );
+
   const numMetricScorers = metricGroupNames.length;
   const numDerivedScores = derivedScores.length;
   const numMetricsPerScorer = [
@@ -976,6 +990,7 @@ const ICValueView: React.FC<{value: any}> = ({value}) => {
         wordBreak: 'break-all',
         padding: 0,
         margin: 0,
+        fontFamily: 'Inconsolata',
       }}>
       {text}
     </pre>

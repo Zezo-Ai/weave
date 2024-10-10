@@ -64,6 +64,7 @@ const GridCell = styled.div<{
     }
   `}
 `;
+GridCell.displayName = 'S.GridCell';
 
 export const ScorecardSection: React.FC<{
   state: EvaluationComparisonState;
@@ -113,7 +114,11 @@ export const ScorecardSection: React.FC<{
   const [diffOnly, setDiffOnly] = React.useState(true);
 
   const compositeSummaryMetrics = useMemo(() => {
-    return buildCompositeMetricsMap(props.state.data, 'summary');
+    return buildCompositeMetricsMap(
+      props.state.data,
+      'summary',
+      props.state.selectedMetrics
+    );
   }, [props.state]);
 
   const onCallClick = usePeekCall(
